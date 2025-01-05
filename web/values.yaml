@@ -96,3 +96,17 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+livenessProbe:
+  enabled: false
+  probe:
+#   httpGet:
+#     path: /
+#     port: http
+
+readinessProbe:
+  enabled: false
+  probe:
+#   httpGet:
+#     path: /
+#     port: http
