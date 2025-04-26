@@ -59,6 +59,22 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+# Environment variables to be added to the container
+env: []
+  # - name: ENV_NAME
+  #   value: env_value
+
+# Secret environment variables to be added to the container
+envSecrets: []
+  # - name: SECRET_ENV_NAME
+  #   secretName: my-secret
+  #   secretKey: my-secret-key
+  # - name: ANOTHER_SECRET
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: my-secret
+  #       key: my-key
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
