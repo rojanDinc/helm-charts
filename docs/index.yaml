@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  cluster-core-config:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-09-28T16:37:49.854479581+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 6a3bdfd98c220a09f9302a98b38f54e1c9098bad86dd8b71fc09eaa2a9d9fd19
+    name: cluster-core-config
+    type: application
+    urls:
+    - https://rojandinc.github.io/helm-charts/cluster-core-config-0.1.0.tgz
+    version: 0.1.0
   web:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-26T23:36:55.348594692+02:00"
+    created: "2025-09-28T16:37:49.855953657+02:00"
     description: A Helm chart for Kubernetes
     digest: ba223c63b8d9a397edccf088260abbbe722556f96d3c685bea74c26c36a4e220
     name: web
@@ -13,7 +24,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-26T23:36:55.34818207+02:00"
+    created: "2025-09-28T16:37:49.855081506+02:00"
     description: A Helm chart for Kubernetes
     digest: 919df234ed945c0500c6f05425e08e36003960961946c4b22b4d54bfca095b10
     name: web
@@ -21,4 +32,4 @@ entries:
     urls:
     - https://rojandinc.github.io/helm-charts/web-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-26T23:36:55.347645006+02:00"
+generated: "2025-09-28T16:37:49.850224445+02:00"
