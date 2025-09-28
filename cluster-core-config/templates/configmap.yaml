@@ -1,0 +1,20 @@
+{{- $namespace := .Values.dashboards.namespace }}
+{{ if .Values.dashboards.enabled }}
+{{- range $key, $dashboard := .Values.dashboards }}
+{{- if $dashboard.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "cluster-core-config.fullname" $ }}-{{ $key }}
+  namespace: {{ $namespace }}
+  labels:
+    {{- include "cluster-core-config.labels" $ | nindent 4 }}
+    grafana_dashboard: "1"
+data:
+  {{ $dashboard.filename }}: |-
+{{ printf "dashboards/%s" $dashboard.filename | $.Files.Get | indent 4 }}
+---
+{{- end }}
+{{- end }}
+{{- end }}
+

@@ -1,0 +1,1 @@
+Dashboards are deployed. Wait for the Grafana dashboard sidecar to pick the dashboards.
