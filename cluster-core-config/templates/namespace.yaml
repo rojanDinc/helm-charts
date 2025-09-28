@@ -1,0 +1,13 @@
+{{ range $name, $namespace := .Values.namespaces }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ $name }}
+  labels: {{- include "cluster-core-config.labels" $ | nindent 4 }}
+{{- if $namespace.extraLabels }}
+{{- range $label, $value := $namespace.extraLabels }}
+    {{ $label }}: {{ $value }}
+{{- end }}
+{{- end }}
+---
+{{ end }}
