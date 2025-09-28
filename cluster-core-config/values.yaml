@@ -1,0 +1,98 @@
+# namespaces:
+#   devops:
+#     extraLabels:
+#       app: devops
+#   apps: {}
+namespaces: {}
+
+# serviceAccounts:
+#   jane:
+#     namespace: devops
+#     role: Admin
+serviceAccounts: {}
+
+# secrets:
+#   nameofsecret:
+#     namespace:
+#     type: Opaque # optional
+#     data: # or stringData
+#       key: value
+#       key2: value2
+secrets: {}
+
+dashboards:
+  # Namespace to deploy dashboard configmaps in
+  namespace: monitoring
+  enabled: false
+  alertmanager:
+    enabled: true
+    filename: alertmanager.json
+  apiserver:
+    enabled: true
+    filename: apiserver.json
+  cluster-total:
+    enabled: true
+    filename: cluster-total.json
+  controller-manager:
+    enabled: true
+    filename: controller-manager.json
+  k8s-resources-cluster:
+    enabled: true
+    filename: k8s-resources-cluster.json
+  k8s-resources-namespace:
+    enabled: true
+    filename: k8s-resources-namespace.json
+  k8s-resources-node:
+    enabled: true
+    filename: k8s-resources-node.json
+  k8s-resources-pod:
+    enabled: true
+    filename: k8s-resources-pod.json
+  k8s-resources-workload:
+    enabled: true
+    filename: k8s-resources-workload.json
+  k8s-resources-workloads-namespace:
+    enabled: true
+    filename: k8s-resources-workloads-namespace.json
+  kubelet:
+    enabled: true
+    filename: kubelet.json
+  namespace-by-pod:
+    enabled: true
+    filename: namespace-by-pod.json
+  namespace-by-workload:
+    enabled: true
+    filename: namespace-by-workload.json
+  node-disk-usage:
+    enabled: true
+    filename: node-disk-usage.json
+  persistent-volumes-usage:
+    enabled: true
+    filename: persistentvolumesusage.json
+  pod-total:
+    enabled: true
+    filename: pod-total.json
+  kube-proxy:
+    enabled: true
+    filename: proxy.json
+  kube-scheduler:
+    enabled: true
+    filename: scheduler.json
+  victoria-metrics:
+    enabled: true
+    filename: victoria-metrics.json
+  victoria-metrics-agent:
+    enabled: true
+    filename: victoria-metrics-agent.json
+  victoria-metrics-alert:
+    enabled: true
+    filename: victoria-metrics-alert.json
+  victoria-metrics-operator:
+    enabled: true
+    filename: victoria-metrics-operator.json
+  victoria-logs:
+    enabled: true
+    filename: victorialogs.json
+  workload-total:
+    enabled: true
+    filename: workload-total.json
