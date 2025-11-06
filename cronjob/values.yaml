@@ -1,0 +1,128 @@
+# Default values for cronjob.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  # REQUIRED: Container image repository (e.g., nginx, busybox, myregistry.io/myapp)
+  repository: ""
+  pullPolicy: IfNotPresent
+  # REQUIRED: Container image tag (e.g., "1.0.0", "latest", "v1.2.3")
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+# CronJob schedule (cron format, e.g., "0 0 * * *" for daily at midnight)
+schedule: "0 0 * * *"
+
+# Specifies how to treat concurrent executions of a Job
+# Valid values are:
+# - "Allow" (default): allows CronJobs to run concurrently
+# - "Forbid": forbids concurrent runs, skipping next run if previous hasn't finished
+# - "Replace": cancels currently running job and replaces it with a new one
+concurrencyPolicy: Allow
+
+# The number of successful finished jobs to retain
+successfulJobsHistoryLimit: 3
+
+# The number of failed finished jobs to retain
+failedJobsHistoryLimit: 1
+
+# Optional deadline in seconds for starting the job if it misses its scheduled time
+startingDeadlineSeconds: null
+
+# Specifies the number of retries before marking this job as failed
+backoffLimit: 6
+
+# Specifies the duration in seconds relative to the startTime that the job may be active
+# before the system tries to terminate it
+activeDeadlineSeconds: null
+
+# Restart policy for the container
+# Valid values are: Never, OnFailure
+restartPolicy: OnFailure
+
+# Environment variables to be added to the container
+env: []
+  # - name: ENV_NAME
+  #   value: env_value
+
+# Secret environment variables to be added to the container
+envSecrets: []
+  # - name: SECRET_ENV_NAME
+  #   secretName: my-secret
+  #   secretKey: my-secret-key
+  # - name: ANOTHER_SECRET
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: my-secret
+  #       key: my-key
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# Additional volumes on the output Job template definition.
+volumes: []
+# - name: foo
+#   secret:
+#     secretName: mysecret
+#     optional: false
+
+# Additional volumeMounts on the output Job template definition.
+volumeMounts: []
+# - name: foo
+#   mountPath: "/etc/foo"
+#   readOnly: true
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Command to run in the container (overrides default entrypoint)
+command: []
+  # - /bin/sh
+  # - -c
+  # - echo "Hello World"
+
+# Arguments to pass to the container command
+args: []
+  # - echo
+  # - "Hello World"
+
