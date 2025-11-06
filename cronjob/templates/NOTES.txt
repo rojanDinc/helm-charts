@@ -1,0 +1,13 @@
+1. Get the CronJob status by running:
+   kubectl get cronjob {{ include "cronjob.fullname" . }} --namespace {{ .Release.Namespace }}
+
+2. View the schedule and last execution time:
+   kubectl describe cronjob {{ include "cronjob.fullname" . }} --namespace {{ .Release.Namespace }}
+
+3. List jobs created by this CronJob:
+   kubectl get jobs --namespace {{ .Release.Namespace }} -l app.kubernetes.io/name={{ include "cronjob.name" . }},app.kubernetes.io/instance={{ .Release.Name }}
+
+4. View logs from the most recent job:
+   export JOB_NAME=$(kubectl get jobs --namespace {{ .Release.Namespace }} -l app.kubernetes.io/name={{ include "cronjob.name" . }},app.kubernetes.io/instance={{ .Release.Name }} --sort-by=.metadata.creationTimestamp -o jsonpath="{.items[-1].metadata.name}")
+   kubectl logs --namespace {{ .Release.Namespace }} job/$JOB_NAME
+

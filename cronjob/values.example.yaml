@@ -1,0 +1,137 @@
+# Example values file for cronjob chart
+# This demonstrates various configuration options available
+
+image:
+  repository: busybox
+  pullPolicy: IfNotPresent
+  tag: "1.36"
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+# Cron schedule - runs every day at 2:30 AM
+schedule: "30 2 * * *"
+
+# Allow concurrent job executions
+concurrencyPolicy: Allow
+
+# Keep last 3 successful job runs
+successfulJobsHistoryLimit: 3
+
+# Keep last 1 failed job run
+failedJobsHistoryLimit: 1
+
+# Optional: deadline for starting the job (in seconds)
+startingDeadlineSeconds: null
+
+# Number of retries before marking job as failed
+backoffLimit: 6
+
+# Maximum time a job can run (in seconds)
+activeDeadlineSeconds: null
+
+# Restart policy: Never or OnFailure
+restartPolicy: OnFailure
+
+# Environment variables
+env:
+  - name: TZ
+    value: "UTC"
+  - name: LOG_LEVEL
+    value: "info"
+
+# Secret environment variables
+envSecrets:
+  - name: API_KEY
+    secretName: my-secret
+    secretKey: api-key
+  # Alternative format using valueFrom
+  # - name: DATABASE_PASSWORD
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: db-secret
+  #       key: password
+
+# Resource limits and requests
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+# Additional volumes
+volumes: []
+  # - name: config
+  #   configMap:
+  #     name: my-configmap
+  # - name: secrets
+  #   secret:
+  #     secretName: my-secret
+
+# Volume mounts
+volumeMounts: []
+  # - name: config
+  #   mountPath: "/etc/config"
+  #   readOnly: true
+
+# Node selector
+nodeSelector: {}
+  # disktype: ssd
+
+# Tolerations
+tolerations: []
+  # - key: "key1"
+  #   operator: "Equal"
+  #   value: "value1"
+  #   effect: "NoSchedule"
+
+# Affinity rules
+affinity: {}
+  # podAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     - labelSelector:
+  #         matchExpressions:
+  #           - key: app
+  #             operator: In
+  #             values:
+  #               - myapp
+  #       topologyKey: kubernetes.io/hostname
+
+# Command to run (overrides default entrypoint)
+command:
+  - /bin/sh
+  - -c
+
+# Arguments to pass to the command
+args:
+  - |
+    echo "Running scheduled task at $(date)"
+    # Your job logic here
+    echo "Task completed"
+
+# Image pull secrets (if using private registry)
+imagePullSecrets: []
+  # - name: regcred
+
