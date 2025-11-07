@@ -3,7 +3,7 @@ entries:
   cluster-core-config:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-11-06T22:53:56.846837689+01:00"
+    created: "2025-11-07T23:53:31.942113381+01:00"
     description: A Helm chart for Kubernetes
     digest: 6a3bdfd98c220a09f9302a98b38f54e1c9098bad86dd8b71fc09eaa2a9d9fd19
     name: cluster-core-config
@@ -14,7 +14,17 @@ entries:
   cronjob:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-06T22:53:56.847260419+01:00"
+    created: "2025-11-07T23:53:31.943292064+01:00"
+    description: A Helm chart for Kubernetes CronJobs
+    digest: 80952abeeef14453a65a8cd099415bbc278c9a880aa7cf326f2eec9cc18cebd8
+    name: cronjob
+    type: application
+    urls:
+    - https://rojandinc.github.io/helm-charts/cronjob-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-11-07T23:53:31.94269052+01:00"
     description: A Helm chart for Kubernetes CronJobs
     digest: 27e21d4b4f7dc8af259e60acc16462ec169407473b31e42405d7cfe44798d42a
     name: cronjob
@@ -25,7 +35,7 @@ entries:
   web:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-11-06T22:53:56.84869405+01:00"
+    created: "2025-11-07T23:53:31.946340362+01:00"
     description: A Helm chart for Kubernetes
     digest: 3b7d7c0110d54ea69cda6eca8de7102542f74a5c8f5779935dc4e65ea581707f
     name: web
@@ -35,7 +45,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-11-06T22:53:56.848131718+01:00"
+    created: "2025-11-07T23:53:31.945238162+01:00"
     description: A Helm chart for Kubernetes
     digest: ba223c63b8d9a397edccf088260abbbe722556f96d3c685bea74c26c36a4e220
     name: web
@@ -45,7 +55,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-11-06T22:53:56.847677309+01:00"
+    created: "2025-11-07T23:53:31.944184993+01:00"
     description: A Helm chart for Kubernetes
     digest: 919df234ed945c0500c6f05425e08e36003960961946c4b22b4d54bfca095b10
     name: web
@@ -53,4 +63,4 @@ entries:
     urls:
     - https://rojandinc.github.io/helm-charts/web-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-06T22:53:56.84192346+01:00"
+generated: "2025-11-07T23:53:31.937836576+01:00"
