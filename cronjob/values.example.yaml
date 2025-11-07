@@ -135,3 +135,26 @@ args:
 imagePullSecrets: []
   # - name: regcred
 
+# Init containers to run before the main container
+initContainers: []
+  # - name: init-setup
+  #   image: busybox:1.36
+  #   imagePullPolicy: IfNotPresent
+  #   command:
+  #     - /bin/sh
+  #     - -c
+  #   args:
+  #     - |
+  #       echo "Running initialization..."
+  #       # Your init logic here
+  #   env:
+  #     - name: INIT_ENV
+  #       value: "init-value"
+  #   resources:
+  #     limits:
+  #       cpu: 100m
+  #       memory: 128Mi
+  #     requests:
+  #       cpu: 50m
+  #       memory: 64Mi
+
