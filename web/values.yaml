@@ -120,6 +120,31 @@ volumeMounts: []
 #   mountPath: "/etc/foo"
 #   readOnly: true
 
+# Persistent volume claim configuration
+# When enabled, creates a PVC and mounts it to the container
+persistence:
+  enabled: false
+  # Name of the PVC (if not set, will be generated from fullname)
+  name: ""
+  # Storage class for the PVC (if not set, uses default storage class)
+  storageClass: ""
+  # Access mode for the PVC
+  accessMode: ReadWriteOnce
+  # Size of the PVC
+  size: 10Gi
+  # Annotations to add to the PVC
+  annotations: {}
+  # Mount path in the container
+  mountPath: /data
+  # Subdirectory of the volume to mount (optional)
+  subPath: ""
+  # Selector for matching existing PVs (optional)
+  selector: {}
+  # Volume mode (Filesystem or Block)
+  volumeMode: Filesystem
+  # Retain policy for the PVC (Retain or Delete)
+  retain: true
+
 nodeSelector: {}
 
 tolerations: []
