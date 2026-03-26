@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.3]
+
+### Added
+- Support for persistent volumes via `persistence` value
+  - Creates a PVC when `persistence.enabled: true`
+  - Configurable storage class, size, access mode, and mount path
+  - Supports existing PVs via selector
+  - Mounts automatically to the container
+
 ## [0.2.2]
 
 ### Added
