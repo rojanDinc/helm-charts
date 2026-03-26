@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2]
+
+### Added
+- Support for Kubernetes user namespaces via `hostUsers` value
+  - Set `hostUsers: false` to enable user namespace isolation
+  - **Warning**: Requires Kubernetes v1.33+ (or v1.29+ with UserNamespacesSupport feature gate)
+  - See values.yaml comments for full cluster requirements
+
 ## [0.2.1]
 
 ### Added
