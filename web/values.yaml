@@ -31,6 +31,18 @@ podLabels: {}
 podSecurityContext: {}
   # fsGroup: 2000
 
+# Enable user namespace support for the pod
+# WARNING: This feature requires Kubernetes v1.33+ (or v1.29+ with UserNamespacesSupport feature gate enabled)
+# and specific cluster requirements:
+#   - Linux kernel 6.3+ on the node
+#   - Container runtime with user namespace support (runc v1.2+, crun v1.9+, containerd v2.0+, or CRI-O v1.25+)
+#   - Node filesystem must support idmap mounts (btrfs, ext4, xfs, tmpfs, overlayfs)
+# If requirements are not met, pods will fail to start with an error.
+# When enabled (false), the container's root user is remapped to a non-root user on the host,
+# significantly reducing container escape privileges.
+# See: https://kubernetes.io/docs/concepts/workloads/pods/user-namespaces/
+hostUsers: true
+
 securityContext: {}
   # capabilities:
   #   drop:
