@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.5]
+
+### Added
+- Support for init containers via `initContainers` value
+  - Configurable name, image, command, args, env, securityContext, resources, volumeMounts
+  - Supports envSecrets for secret-based environment variables
+  - Runs before the main container starts
+
 ## [0.2.4]
 
 ### Added
