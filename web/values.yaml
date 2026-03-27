@@ -151,6 +151,23 @@ persistence:
   # Retain policy for the PVC (Retain or Delete)
   retain: true
 
+# Init containers to run before the main container
+# Each init container can have: name, image, imagePullPolicy, command, args, env, 
+# envSecrets, volumeMounts, securityContext, and resources
+initContainers: []
+  # - name: init-myservice
+  #   image: busybox:1.35
+  #   command: ['sh', '-c', 'until nslookup myservice; do echo waiting for myservice; sleep 2; done']
+  # - name: init-mydb
+  #   image: busybox:1.35
+  #   command: ['sh', '-c', 'until nslookup mydb; do echo waiting for mydb; sleep 2; done']
+  #   env:
+  #     - name: ENV_VAR
+  #       value: value
+  #   volumeMounts:
+  #     - name: data
+  #       mountPath: /data
+
 nodeSelector: {}
 
 tolerations: []
