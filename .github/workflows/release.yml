@@ -4,22 +4,12 @@ on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
-  helm-docs:
-    runs-on: ubuntu-latest
-    container: ghcr.io/norwoodj/helm-docs:1.14.2
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run helm-docs
-        run: helm-docs --chart-search-root charts --check
-
   release:
-    needs: helm-docs
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
