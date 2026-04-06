@@ -10,4 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run helm-docs
-        run: helm-docs --chart-search-root charts --check
+        run: helm-docs --chart-search-root charts
+      - name: Check for uncommitted changes
+        run: |
+          if [[ -n "$(git diff -- '*.md')" ]]; then
+            echo "ERROR: README files need updating. Run 'helm-docs --chart-search-root charts' locally and commit the changes."
+            git diff -- '*.md'
+            exit 1
+          fi
