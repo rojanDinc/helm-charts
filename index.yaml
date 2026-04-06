@@ -1,0 +1,36 @@
+apiVersion: v1
+entries:
+  cluster-core-config:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-04-06T12:21:21.011075179Z"
+    description: A Helm chart for Kubernetes
+    digest: fe9c26e544915d02173acd3e942ac76dc4555812e4a98a68829fb3f88f781039
+    name: cluster-core-config
+    type: application
+    urls:
+    - https://github.com/rojanDinc/helm-charts/releases/download/cluster-core-config-0.1.0/cluster-core-config-0.1.0.tgz
+    version: 0.1.0
+  cronjob:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-04-06T12:21:21.118681021Z"
+    description: A Helm chart for Kubernetes CronJobs
+    digest: 8ea61d8ddf8ed7f4ca46a4bf2b0a421134dd71998b512b6e8381e494641140e6
+    name: cronjob
+    type: application
+    urls:
+    - https://github.com/rojanDinc/helm-charts/releases/download/cronjob-0.2.0/cronjob-0.2.0.tgz
+    version: 0.2.0
+  web:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-04-06T12:21:21.260146327Z"
+    description: A Helm chart for Kubernetes
+    digest: 4f53844393bf01e50e34b1b93df3f217baf158bea119918562ce86f17318095e
+    name: web
+    type: application
+    urls:
+    - https://github.com/rojanDinc/helm-charts/releases/download/web-0.2.5/web-0.2.5.tgz
+    version: 0.2.5
+generated: "2026-04-06T12:21:21.26015273Z"
