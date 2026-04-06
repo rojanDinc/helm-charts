@@ -6,7 +6,7 @@
 2. Package the new chart.
 
 ```
-helm package <chart>
+helm package charts/<chart>
 ```
 
 3. Next move the `tgz` file to the `docs/` directory.
