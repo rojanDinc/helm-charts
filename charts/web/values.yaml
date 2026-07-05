@@ -153,7 +153,7 @@ persistence:
 
 # Init containers to run before the main container
 # Each init container can have: name, image, imagePullPolicy, command, args, env, 
-# envSecrets, volumeMounts, securityContext, and resources
+# envSecrets, volumeMounts, securityContext, resources, and restartPolicy
 initContainers: []
   # - name: init-myservice
   #   image: busybox:1.35

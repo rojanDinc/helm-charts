@@ -73,6 +73,9 @@ spec:
           volumeMounts:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          {{- if .restartPolicy }}
+          restartPolicy: {{ .restartPolicy }}
+          {{- end }}
         {{- end }}
       {{- end }}
       containers:
